@@ -96,7 +96,7 @@ class Shape{
                 	System.out.println("Perimeter of Triangle: "+sh.perimeter(s1,s2,s3));
                 	
                 }break;
-                case 4: System.exit(0);
+                case 4: System.exit(0); break;
             
                 default:System.out.println("***Enter right choice***");
                     break;
