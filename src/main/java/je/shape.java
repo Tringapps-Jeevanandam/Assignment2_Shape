@@ -3,7 +3,7 @@ package je;
 
 import java.util.*; 
 import java.lang.Math;
-class shape2 {
+class Shape2 {
     String shapeName;
     double radius;
     double length;
@@ -50,11 +50,16 @@ class shape2 {
     	return side1+side2+side3;
     }   
 }
-class shape{
+class Shape{
     public static void main(String[] args) {
         int choice;
         String shapeName;
-        double r,len,wid,s1,s2,s3;
+        double r;
+        double len;
+        double wid;
+        double s1;
+        double s2;
+        double s3;
         Scanner sc = new Scanner(System.in);
 
         while(true){
