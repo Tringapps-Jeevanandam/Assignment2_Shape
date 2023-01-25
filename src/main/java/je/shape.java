@@ -2,7 +2,6 @@ package je;
 
 
 import java.util.*; 
-import java.lang.Math;
 class Shape2 {
     String shapeName;
     double radius;
@@ -36,8 +35,7 @@ class Shape2 {
     }
     double area(double side1, double side2,double side3) {
     	double s = perimeter(side1,side2,side3)/2;
-    	double a= Math.sqrt(s*(s-side1)*(s-side2)*(s-side3));
-    	return a;
+    	return Math.sqrt(s*(s-side1)*(s-side2)*(s-side3));
     }
 
     double perimeter(double radius) {
