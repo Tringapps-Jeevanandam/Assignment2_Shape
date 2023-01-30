@@ -2,6 +2,7 @@ package je;
 
 
 import java.util.*; 
+import java.util.logging.Logger;
 class Shape2 {
     String shapeName;
     double radius;
@@ -11,16 +12,16 @@ class Shape2 {
     double side2;
     double side3;
 
-    shape2(String shapeName, double r){
+    Shape2(String shapeName, double r){
         this.radius=r;
         this.shapeName=shapeName;
     }
-    shape2(String shapeName, double len,double wid){
+    Shape2(String shapeName, double len,double wid){
         this.shapeName = shapeName;
         this.length = len;
         this.width = wid;
     }
-    shape2(String shapeName, double s1, double s2, double s3){
+    Shape2(String shapeName, double s1, double s2, double s3){
         this.shapeName = shapeName;
         this.side1 = s1;
         this.side2 = s2;
@@ -49,6 +50,7 @@ class Shape2 {
     }   
 }
 class Shape{
+    public static final Logger Log = Logger.getLogger("InfoLogging");
     public static void main(String[] args) {
         int choice;
         String shapeName;
@@ -61,42 +63,42 @@ class Shape{
         Scanner sc = new Scanner(System.in);
 
         while(true){
-            System.out.println("1.Circle\n2.Rectangle\n3.Triangle\n4.Exit");
+            Log.info("1.Circle\n2.Rectangle\n3.Triangle\n4.Exit");
             choice = sc.nextInt();
             switch (choice) {
                 case 1:{
-                    System.out.println("Enter Radius:");
+                    Log.info("Enter Radius:");
                     r = sc.nextDouble();
                     shapeName = "Circle";
-                    shape2 sh = new shape2(shapeName, r);
-                    System.out.println("Area of Circle: "+sh.area(r));
-                  System.out.println("Perimeter of Circle: "+sh.perimeter(r));
+                    Shape2 sh = new Shape2(shapeName, r);
+                    Log.info("Area of Circle: {} ",sh.area(r));
+                  Log.info("Perimeter of Circle:{} ",sh.perimeter(r));
 
                 }break;
                 case 2:{
-                	System.out.println("Enter Length and Width:");
+                	Log.info("Enter Length and Width:");
                 	len = sc.nextDouble();
                 	wid = sc.nextDouble();
                 	shapeName = "Rectangle";
-                	shape2 sh = new shape2(shapeName, len,wid);
-                	System.out.println("Area of Rectangle: "+sh.area(len, wid));
-                	System.out.println("Perimeter of Rectangle: "+sh.perimeter(len, wid));
+                	Shape2 sh = new Shape2(shapeName, len,wid);
+                	Log.info("Area of Rectangle:{} ",sh.area(len, wid));
+                	Log.info("Perimeter of Rectangle:{} ",sh.perimeter(len, wid));
 
                 }break;
                 case 3:{
-                	System.out.println("Enter Three sides of the triangle:");
+                	Log.info("Enter Three sides of the triangle:");
                 	s1 = sc.nextDouble();
                 	s2 = sc.nextDouble();
                 	s3 = sc.nextDouble();
                 	shapeName = "Triangle";
-                	shape2 sh = new shape2(shapeName,s1,s2,s3);
-                	System.out.println("Area of Triangle: "+sh.area(s1,s2,s3));
-                	System.out.println("Perimeter of Triangle: "+sh.perimeter(s1,s2,s3));
+                	Shape2 sh = new Shape2(shapeName,s1,s2,s3);
+                	Log.info("Area of Triangle:{} ",sh.area(s1,s2,s3));
+                	Log.info("Perimeter of Triangle:{} ",sh.perimeter(s1,s2,s3));
                 	
                 }break;
                 case 4: System.exit(0); break;
             
-                default:System.out.println("***Enter right choice***");
+                default:Log.info("***Enter right choice***");
                     break;
                    
             }
