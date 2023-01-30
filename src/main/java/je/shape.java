@@ -63,6 +63,7 @@ class Shape{
         Scanner sc = new Scanner(System.in);
 
         while(true){
+            try{
             Log.info("1.Circle\n2.Rectangle\n3.Triangle\n4.Exit");
             choice = sc.nextInt();
             switch (choice) {
@@ -102,6 +103,12 @@ class Shape{
                     break;
                    
             }
+        }
+        catch(Exception e){
+            String exp = "Exception:"+ e;
+            Log.info(exp);
+            sc.nextLine();
+        }
             
         }
     }
